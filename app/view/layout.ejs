@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title><%=title%></title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<style type="text/css">
+		@media screen and (max-width: 480px)  
+		{
+			#myTopNav{
+
+			}
+		    #myTopNav ul li
+		    {
+		       float: left;
+		       
+		    }
+		    #secondNav{
+		    	/*max-height: 10px;*/
+		    	margin-top: 180px !important;
+		    }  
+
+		}
+		@media screen and (max-width: 768px)  
+		{
+			
+		    #secondNav{
+		    	/*max-height: 10px;*/
+		    	margin-top: 260px !important;
+		    }  
+
+		}
+		#secondNav{
+			margin-top: 50px;
+			
+		}
+		.panel-footer{
+			padding: 10px 12px !important;
+		}
+		.panel-body img{
+			height: 150px;
+			width: 200px;
+		}
+
+	</style>
+</head>
+<body>
+
+<div class="modal fade" id="myModal">
+<div class="modal-dialog">
+<div class="modal-content">
+	
+	<div class="modal-body">
+		<div class="panel panel-primary" >
+			<div class="panel-heading" ><button type="button" class="close btn " data-dismiss="modal">&times</button><h2>Log in</h2></div>
+			<div class="panel-body" >
+				<form class="form-horizontal">
+	<div class="form-group">
+	
+		<div class="col-sm-4">
+			<label class="control=label">User Name</label>
+		</div>
+		<div class="col-sm-8">
+			<input type="text" name="text" placeholder="Username" class="form-control">
+			
+		</div>
+
+	</div>
+	<div class="form-group">
+	
+		<div class="col-sm-4">
+			<label class="control=label">Password</label>
+		</div>
+		<div class="col-sm-8">
+			<input type="Password" name="text" placeholder="Password" class="form-control">
+			<a href="#" class="pull-right">Forgot Password?</a>
+		</div>
+
+		</form>
+
+	</div>
+			</div>
+			<div class="panel-footer" >
+
+				<button class="btn btn-success  btn-block" type="submit" > Log in</button>
+	</div>
+			</div>
+			<div class="modal-footer" ><p class="text-center" >New User</p>
+				<a href="/Signup" class="btn btn-warning  btn-block" type="button" > Create Your New Account</a>
+			</div>
+		</div>
+	</div>
+	
+</div>
+</div>
+</div>
+<nav class="navbar navbar-inverse navbar-fixed-top" id="#myTopNav" >
+
+	<div class="container ">
+		<div class="navbar-header">
+			<a href="/" class="navbar-brand " style="font-size: 26px; color:#18D26E"><b>Jsk</b></a>
+		</div>
+
+		<form class="navbar-form navbar-left">
+
+				<div class="form-group">
+				<div class="input-group">
+					<input type="text" class="form-control" placeholder="search....">
+					<div class="input-group-addon"><span class="glyphicon glyphicon-search"></span>
+				</div>
+				</div>
+				</div>
+
+			</form>
+
+			<div class="collapse navbar-collapse myNav" id="myTopNav">
+			<ul class="nav navbar-nav navbar-right">
+			<li><a href="#myModal" data-toggle="modal">Login</a></li>
+			<li><a href="/Signup">Signup</a></li>
+			<li><a href="#">My Cart(0)</a></li>
+			
+			</ul>
+		
+		</div>
+
+			
+			</div>
+	
+</nav>
+<nav id="secondNav" class="navbar navbar-default">
+	<div class="container">
+		<div class="navbar-header navbar-center ">
+
+		<button data-toggle="collapse" data-target=".myNav" class="navbar-toggle">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+		<div class="collapse navbar-collapse myNav">
+
+			<ul class="nav navbar-nav navbar-left">
+				<li><a href="/" >Home</a></li>
+				<li><a href="/about">About</a></li>
+				<li><a href="/contact">Contact</a></li>
+				<li><a href="#">Help</a></li>
+			</ul>
+
+		</div>
+		</div>
+		
+			
+	</div>
+</nav>
+
+
+
+<%-include(pagename);%>
+
+
+
+
+
+
+
+
+<!--Footer-->
+<footer style="background-color: #18D36E; min-height: 100px;" class="page-footer font-small blue pt-4 mt-4">
+
+    <!--Footer Links-->
+    <div class="container-fluid text-center text-md-left">
+        <div class="row">
+
+            <!--First column-->
+            <div class="col-md-6">
+                <h5 class="text-uppercase">Footer Content</h5>
+                <p>Here you can use rows and columns here to organize your footer content.</p>
+            </div>
+            <!--/.First column-->
+
+            <!--Second column-->
+            <div class="col-md-6">
+                <h5 class="text-uppercase">Links</h5>
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="#!">Link 1</a>
+                    </li>
+                    <li>
+                        <a href="#!">Link 2</a>
+                    </li>
+                    
+                </ul>
+            </div>
+            <!--/.Second column-->
+        </div>
+    </div>
+    <!--/.Footer Links-->
