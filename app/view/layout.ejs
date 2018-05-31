@@ -99,11 +99,11 @@
 </div>
 </div>
 </div>
-<nav class="navbar navbar-inverse navbar-fixed-top" id="#myTopNav" >
+<nav class="navbar navbar-default navbar-fixed-top" id="#myTopNav" >
 
 	<div class="container ">
 		<div class="navbar-header">
-			<a href="/" class="navbar-brand " style="font-size: 26px; color:#18D26E"><b>Jsk</b></a>
+			<a href="/" class="navbar-brand " style="font-size: 26px; color:#337AB7"><b>Jsk</b></a>
 		</div>
 
 		<form class="navbar-form navbar-left">
@@ -120,9 +120,10 @@
 
 			<div class="collapse navbar-collapse myNav" id="myTopNav">
 			<ul class="nav navbar-nav navbar-right">
-			<li><a href="#myModal" data-toggle="modal">Login</a></li>
+			<li><a href="/login">Login</a></li>
 			<li><a href="/Signup">Signup</a></li>
-			<li><a href="#">My Cart(0)</a></li>
+			<li><a href="#">Profile</a></li>
+			<li><a href="/logout">Logout</a></li>
 			
 			</ul>
 		
@@ -132,7 +133,7 @@
 			</div>
 	
 </nav>
-<nav id="secondNav" class="navbar navbar-default">
+<nav id="secondNav" class="navbar navbar-inverse" >
 	<div class="container">
 		<div class="navbar-header navbar-center ">
 
@@ -144,7 +145,7 @@
 		<div class="collapse navbar-collapse myNav">
 
 			<ul class="nav navbar-nav navbar-left">
-				<li><a href="/" >Home</a></li>
+				<li><a href="/">Home</a></li>
 				<li><a href="/about">About</a></li>
 				<li><a href="/contact">Contact</a></li>
 				<li><a href="#">Help</a></li>
@@ -157,11 +158,11 @@
 	</div>
 </nav>
 
-
+<div style="min-height: 360px; height: auto;">
 
 <%-include(pagename);%>
 
-
+</div>
 
 
 
@@ -169,7 +170,7 @@
 
 
 <!--Footer-->
-<footer style="background-color: #18D36E; min-height: 100px;" class="page-footer font-small blue pt-4 mt-4">
+<footer style="background-color: #337AB7; min-height: 100px;" class="page-footer font-small blue pt-4 mt-4">
 
     <!--Footer Links-->
     <div class="container-fluid text-center text-md-left">

@@ -1,5 +1,11 @@
 var express=require("express");
 var app=express();
+var parser=require("body-parser");
+var cookie=require("cookie-parser");
+var session=require("express-session");
+var flash=require("express-flash");
+var cache=require("nocache");
+
 
 
 // .....all require file code......
@@ -9,10 +15,15 @@ app.set("views","view");
 
 // ......all app set code.....
 
-var parser=require("body-parser");
+
 app.use(parser());
 app.use(express.static(__dirname+"/public"));
+app.use(cookie());
+app.use(session({secret:"jsk123"}));
+app.use(flash());
+app.use(cache());
 app.use(require("./controller/default"));
+
 
 // ......all app.use code......
 
