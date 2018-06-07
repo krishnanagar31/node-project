@@ -22,7 +22,13 @@ app.use(cookie());
 app.use(session({secret:"jsk123"}));
 app.use(flash());
 app.use(cache());
+app.use(function(req,res,next){
+	res.locals.session=req.session;
+	
+	next();
+});
 app.use(require("./controller/default"));
+
 
 
 // ......all app.use code......

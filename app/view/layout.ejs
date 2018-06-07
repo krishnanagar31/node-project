@@ -120,11 +120,18 @@
 
 			<div class="collapse navbar-collapse myNav" id="myTopNav">
 			<ul class="nav navbar-nav navbar-right">
+			<li><a><%if(session.fullname){%>Hi
+			<%= session.fullname %>+
+			<%}%></a></li>
+		
+			<%if(!session.is_user_logged_in){%>
 			<li><a href="/login">Login</a></li>
 			<li><a href="/Signup">Signup</a></li>
+			
+			<%}else{%>
 			<li><a href="#">Profile</a></li>
 			<li><a href="/logout">Logout</a></li>
-			
+			<%}%>
 			</ul>
 		
 		</div>
@@ -150,10 +157,9 @@
 				<li><a href="/contact">Contact</a></li>
 				<li><a href="#">Help</a></li>
 			</ul>
-
 		</div>
 		</div>
-		
+			
 			
 	</div>
 </nav>

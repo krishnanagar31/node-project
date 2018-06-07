@@ -1,0 +1,31 @@
+<div class="container">
+	<h1 class="text-center">View product</h1><hr>
+</div>
+<div class="container" >
+	<table class="table table-bordered table-stripped table-hover" >
+		<tr>
+			<th>S.no</th>
+			<th>product name</th>
+			<th>product price</th>
+			<th>discout</th>
+			<th>product category</th>
+			<th>product detaile</th>
+			<th>Update</th>
+			<th>Delete</th>
+		</tr>
+		<%data.forEach(function(x,i){%>
+
+		<tr>
+			<td><%=i+1%></td>
+			<td><%=x.name%></td>
+			<td><%=x.price%></td>
+			<td><%=x.discount%></td>
+			<td><%=x.category%></td>
+			<td><%=x.detaile%></td>
+			<td><button type="submit" class="btn btn-success">Update</button></td>
+			<td><button type="submit" class="btn btn-danger">Delete</button></td>
+
+		</tr>
+		<%})%>
+	</table>
+</div>

@@ -28,7 +28,7 @@
 
 	<% category.forEach(function(obj){%>
 
-	<li class="list-group-item"><a href="#"><%=obj.category%></a></li>
+	<li class="list-group-item"><a href="#"><%=obj.name%></a></li>
 
 	<%})%>
 				</ul>
@@ -43,10 +43,10 @@
 		<div class="col-sm-4">
 				<div class="panel panel-default">
 					<div class="panel-heading">
-		<h4><%=obj.proName%><small>(Rs.<%=obj.proPrice%>)</small> </h4>
+		<h4><%=obj.name%><small>(Rs.<%=obj.price%>)</small> </h4>
 				</div>
 <div class="panel-body">
-	<img src="<%=obj.proImg%>" class="img img-thumbnail"  />
+	<img src="" class="img img-thumbnail"  />
 	</div>
 <div class="panel-footer">
 <button class="btn btn-primary btn-sm">Buy

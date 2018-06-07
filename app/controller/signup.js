@@ -1,7 +1,7 @@
 var express=require("express");
 var router=express.Router();
-var mongo=require("mongodb").MongoClient;
-var url="mongodb://localhost:27017";
+
+var user=require("../model/user");
 
 router.get("/",function(req,res){
 	var pagedata={title:"signup",pagename:"signup/index"}
@@ -10,18 +10,13 @@ router.get("/",function(req,res){
 
 
 router.post("/",function(req,res){
-	console.log(req.body);
-	mongo.connect(url,function(err,client){
-
-	var db=client.db("project");
-	console.log(req.body);
-	db.collection("user").insert(req.body,function(err,result){
+user.insert(req.body,function(err,result){
 		console.log("---------",result);
 		res.redirect("/login");
 	});
 
 	});
 
-	});
+	
 
 module.exports=router;
