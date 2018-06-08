@@ -4,12 +4,16 @@
   "description": "testing",
   "main": "app.js",
   "dependencies": {
-    "express": "~4.16.3",
-    "ejs": "~2.6.1",
-    "body-parser": "~1.18.3",
-    "cookie-parser": "~1.4.3",
-    "express-session": "~1.15.6",
-    "mongodb": "~3.1.0-beta4"
+    "body-parser": "^1.18.3",
+    "cookie-parser": "^1.4.3",
+    "crypto": "^1.0.1",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "express-fileupload": "^0.4.0",
+    "express-flash": "0.0.2",
+    "express-session": "^1.15.6",
+    "mongodb": "^3.1.0-beta4",
+    "nocache": "^2.0.0"
   },
   "devDependencies": {},
   "scripts": {

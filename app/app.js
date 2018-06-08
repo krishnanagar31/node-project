@@ -5,7 +5,7 @@ var cookie=require("cookie-parser");
 var session=require("express-session");
 var flash=require("express-flash");
 var cache=require("nocache");
-
+var upload=require("express-fileupload");
 
 
 // .....all require file code......
@@ -22,6 +22,7 @@ app.use(cookie());
 app.use(session({secret:"jsk123"}));
 app.use(flash());
 app.use(cache());
+app.use(upload());
 app.use(function(req,res,next){
 	res.locals.session=req.session;
 	

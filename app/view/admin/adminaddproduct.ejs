@@ -5,11 +5,12 @@
 <div class="container">
 
 <div class="col-sm-4 col-sm-offset-4" >
-	<form action="/admin/add_product" method="post">
+	<form action="/admin/add_product" method="post" enctype="multipart/form-data">
 	<label>product name</label>
 	<input  class="form-control" type="text" name="name" placeholder="product name"><br><label>product price</label>
 	<input  class="form-control" type="text" name="price" placeholder="product price"><br><label>discount</label>
-	<input  class="form-control" type="text" name="discount" placeholder="discount"><br><label>product category</label>
+	<input  class="form-control" type="text" name="discount" placeholder="discount"><br><label>product image</label>
+	<input  class="form-control" type="file" name="image" placeholder="discount"><br><label>product category</label>
 	<select class="form-control" name="category">
 		<option>select</option>
 		<%data.forEach(function(x){%>
