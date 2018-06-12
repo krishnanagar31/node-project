@@ -1,0 +1,25 @@
+<div class="container">
+<h1 class="text-center">Update products</h1>
+<hr>
+</div>
+<div class="container">
+
+<div class="col-sm-4 col-sm-offset-4" >
+	<form action="/admin/add_product/update" method="post" enctype="multipart/form-data">
+	<label>product name</label>
+	<input value="<%= data.name %>" class="form-control" type="text" name="name" placeholder="product name"><br>
+	<label>product price</label>
+	<input value="<%= data.price %>" class="form-control" type="text" name="price" placeholder="product price"><br>
+	<label>discount</label>
+	<input value="<%= data.discount %>"  class="form-control" type="text" name="discount" placeholder="discount"><br>
+	<!-- <label>product image</label>
+	<input value="<%= data.image %>" class="form-control" type="file" name="image" placeholder="image"><br> -->
+	<label>product detaile</label><br>
+	<input type="hidden" name="id" value="<%= data._id%>">
+	<textarea  class="form-control" name="detaile" placeholder="product detaile"><%= data.detaile %></textarea><br>
+	<button type="submit" class="btn btn-warning" >Update product</button>
+</form>
+</div>
+	
+
+</div>

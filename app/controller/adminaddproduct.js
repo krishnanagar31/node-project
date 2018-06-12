@@ -4,6 +4,8 @@ var product=require("../model/product");
 var category=require("../model/category");
 var changename=require("../helper/changename");
 var path=require("path");
+var mongo=require("mongodb");
+
 
 router.get("/",function(req,res){
 	category.find(function(err,result){
@@ -39,6 +41,21 @@ router.post("/",function(req,res){
 		});
 
 	});
+
+router.post("/update", function(req, res){
+	// console.log(req.body);
+	// var data = req.body;
+	// console.log(data);
+	// delete data.id;
+	// console.log(data);
+	var id= req.body.id;
+	delete req.body.id;
+	product.updatewhere({_id : mongo.ObjectId(id)}, req.body, function(err, result){
+		console.log(result);
+		res.redirect("/admin/view_product");
+	});
+
+});
 
 	
 module.exports=router;
