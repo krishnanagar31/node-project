@@ -1,6 +1,7 @@
 var express=require("express");
 var router=express.Router();
 var product=require("../model/product");
+var category=require("../model/category");
 var mongo=require("mongodb");
 
 router.get("/",function(req,res){
@@ -24,12 +25,23 @@ product.remove({_id:mongo.ObjectId(req.params.id)},function(err,result){
 
 
 router.get("/update/:id",function(req,res){
+
+
 	product.findwhere({ _id : mongo.ObjectId(req.params.id)},function(err,result){
 
-	var pagedata={title:"admin update_product",pagename:"admin/admineditproduct",data:result[0]}
+			prodata=result[0];
+
+		category.find(function(err,result){
+
+
+	var pagedata={title:"admin update_product",pagename:"admin/admineditproduct",prodata:prodata,catedata:result}
 	res.render("admin_layout",pagedata);
+
 		});
+
 	});
+
+});
 	
 	
 

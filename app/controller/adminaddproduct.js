@@ -5,7 +5,7 @@ var category=require("../model/category");
 var changename=require("../helper/changename");
 var path=require("path");
 var mongo=require("mongodb");
-
+var fs=require("fs");
 
 router.get("/",function(req,res){
 	category.find(function(err,result){
@@ -32,7 +32,7 @@ router.post("/",function(req,res){
 
 
 	product.insert(req.body,function(err,result){
-		console.log("---------",result);
+		// console.log("---------",result);
 		req.flash("msg","add product successfully")
 		res.redirect("/admin/add_product");
 
@@ -43,15 +43,27 @@ router.post("/",function(req,res){
 	});
 
 router.post("/update", function(req, res){
-	// console.log(req.body);
-	// var data = req.body;
-	// console.log(data);
-	// delete data.id;
-	// console.log(data);
+	
 	var id= req.body.id;
+	var image=req.body.image;
 	delete req.body.id;
+	delete req.body.image
+		
+		// if(req.files.length>0)
+		if(req.files.image)
+		{
+
+		var file = req.files.image;
+		var newname = changename(file.name);
+		var filepath = path.resolve("public/product_images/"+newname);
+		file.mv(filepath);
+		req.body.image = newname;
+		var oldfilepath=path.resolve("public/product_images/"+image);
+		fs.unlinkSync(oldfilepath);
+		}
+
 	product.updatewhere({_id : mongo.ObjectId(id)}, req.body, function(err, result){
-		console.log(result);
+		// console.log(result);
 		res.redirect("/admin/view_product");
 	});
 

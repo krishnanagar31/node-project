@@ -5,19 +5,57 @@
 <div class="container">
 
 <div class="col-sm-4 col-sm-offset-4" >
+
 	<form action="/admin/add_product/update" method="post" enctype="multipart/form-data">
+
+
 	<label>product name</label>
-	<input value="<%= data.name %>" class="form-control" type="text" name="name" placeholder="product name"><br>
+	<input value="<%= prodata.name %>" class="form-control" type="text" name="name" placeholder="product name"><br>
+
+
 	<label>product price</label>
-	<input value="<%= data.price %>" class="form-control" type="text" name="price" placeholder="product price"><br>
+	<input value="<%= prodata.price %>" class="form-control" type="text" name="price" placeholder="product price"><br>
+
+
 	<label>discount</label>
-	<input value="<%= data.discount %>"  class="form-control" type="text" name="discount" placeholder="discount"><br>
-	<!-- <label>product image</label>
-	<input value="<%= data.image %>" class="form-control" type="file" name="image" placeholder="image"><br> -->
+	<input value="<%= prodata.discount %>"  class="form-control" type="text" name="discount" placeholder="discount"><br>
+
+	<label>Current image</label>
+	<img src="/product_images/<%= prodata.image %>" height="100" width="100">
+
+	<label>product image</label>
+	<input class="form-control" type="file" name="image"><br>
+
+	<label>Product category</label>
+	
+	<select class="form-control" name="category">
+        <option>Select</option>
+        <% catedata.forEach(function(x){ %>
+          <% if(prodata.category == x._id)
+          { %>
+            <option selected="selected" value="<%= x._id %>"><%= x.name %></option>
+          <% }
+          else
+          { %>
+            <option value="<%= x._id %>"><%= x.name %></option>
+         <% } %>
+
+          
+      <% }) %>
+      </select>
+
+
+
 	<label>product detaile</label><br>
-	<input type="hidden" name="id" value="<%= data._id%>">
-	<textarea  class="form-control" name="detaile" placeholder="product detaile"><%= data.detaile %></textarea><br>
+	<textarea  class="form-control" name="detaile" placeholder="product detaile"><%= prodata.detaile %></textarea><br>
+
+
+	<input type="hidden" name="id" value="<%= prodata._id%>">
+
+
 	<button type="submit" class="btn btn-warning" >Update product</button>
+
+
 </form>
 </div>
 	
